@@ -4,11 +4,13 @@ A set of [userscripts](https://en.wikipedia.org/wiki/Userscript) I've personally
 
 ## Index
 
-- [Bandcamp Nag Block](bandcamp-nag-block.user.js): Suppress the "Time to open your heart/wallet"
-  modal on [Bandcamp](https://bandcamp.com).
-- [Startpage Search Results Title Setter](startpage-search-results-title-setter.user.js): Include
-  search terms and page numbers &gt; 1 in the titles of Startpage search results pages. Makes tabs
-  easier to tell apart and history-based autocomplete more usable.
+- [Bandcamp Nag Block](bandcamp-nag-block.user.js)
+  ([install](https://raw.githubusercontent.com/spinda/userscripts/master/bandcamp-nag-block.user.js)):
+  Suppress the "Time to open your heart/wallet" modal on [Bandcamp](https://bandcamp.com).
+- [Startpage Search Results Title Setter](startpage-search-results-title-setter.user.js)
+  ([install](https://raw.githubusercontent.com/spinda/userscripts/master/startpage-search-results-title-setter.user.js)):
+  Include search terms and page numbers &gt; 1 in the titles of Startpage search results pages.
+  Makes tabs easier to tell apart and history-based autocomplete more usable.
 
 ## License
 
