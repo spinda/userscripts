@@ -1,6 +1,6 @@
 // vim: set tw=99 ts=4 sw=4 et:
 
-// Copyright (C) 2019 Michael Smith <michael@spinda.net>
+// Copyright (C) 2019-2020 Michael Smith <michael@spinda.net>
 
 // This program is free software: you can redistribute it and/or modify it under
 // the terms of the GNU Affero General Public License as published by the Free
@@ -20,36 +20,27 @@
 // @namespace    https://spinda.net
 // @author       Michael Smith <michael@spinda.net>
 // @license      AGPL-3.0-or-later
-// @version      1.0.0
+// @version      1.0.1
 // @description  Include search terms and page numbers > 1 in the titles of Startpage search
 //               results pages. Makes tabs easier to tell apart and history-based autocomplete more
 //               usable.
 // @updateURL    https://raw.githubusercontent.com/spinda/userscripts/master/startpage-search-results-title-setter.user.js
 // @downloadURL  https://raw.githubusercontent.com/spinda/userscripts/master/startpage-search-results-title-setter.user.js
 // @match        https://*.startpage.com/do/*
+// @match        https://*.startpage.com/sp/*
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
 
-    const startAt = parseInt(new URL(location.href).searchParams.get('startat') || '0');
-
-    const paginationButtons = document.getElementsByName('startat');
     let pageNum = 1;
 
-    if (paginationButtons.length > 0) {
-        const prevStartAt = parseInt(paginationButtons[0].value);
-        if (prevStartAt >= 0) {
-            pageNum = 1 + startAt / (startAt - prevStartAt);
-        } else {
-            const nextStartAt = parseInt(paginationButtons[1].value);
-            if (nextStartAt >= 0) {
-                pageNum = 1 + startAt / (nextStartAt - startAt);
-            }
-        }
+    const highlightedPageNumbers = document.getElementsByClassName('num--active');
+    if (highlightedPageNumbers.length > 0) {
+        pageNum = parseInt(highlightedPageNumbers[0].innerHTML);
     }
 
     const prefix = pageNum > 1 ? `(${pageNum}) ` : '';
-    document.title = `${prefix}${document.getElementById('query').value} - Startpage.com`;
+    document.title = `${prefix}${document.getElementById('q').value} - Startpage.com`;
 })();

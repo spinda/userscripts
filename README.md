@@ -14,7 +14,7 @@ A set of [userscripts](https://en.wikipedia.org/wiki/Userscript) I've personally
 
 ## License
 
-Copyright (C) 2019 Michael Smith &lt;michael@spinda.net&gt;
+Copyright (C) 2019-2020 Michael Smith &lt;michael@spinda.net&gt;
 
 These programs are free software: you can redistribute them and/or modify them under the terms of
 the GNU Affero General Public License as published by the Free Software Foundation, either version
